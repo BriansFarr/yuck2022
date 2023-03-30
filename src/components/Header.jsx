@@ -12,7 +12,8 @@ const Header = () => {
     <header>
       <img src={YH} alt="YH" />
       <nav>
-        <NavLink to="/nyc">HOME</NavLink>
+        <NavLink to="/">LATEST RATINGS</NavLink>
+        <NavLink to="/nyc">SEARCH</NavLink>
       </nav>
     </header>
   );
