@@ -1,0 +1,40 @@
+/* src/CSS/Header.css */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background-color: #92AA83;
+}
+
+header img {
+  max-height: 250px;
+  width: auto;
+  margin-right: 1rem;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  color: #F1F7EE;
+  text-decoration: none;
+  margin-left: 1rem;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+  }
+
+  nav {
+    margin-top: 0.5rem;
+  }
+}
