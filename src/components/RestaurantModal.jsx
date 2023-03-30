@@ -7,7 +7,7 @@ const RestaurantModal = ({ restaurant, onClose }) => {
     <div className="modal">
       <div className="modal-content">
         <button onClick={onClose} className="close-modal">Close</button>
-        <h1>{restaurant.name}</h1>
+        <h1>{restaurant.dba}</h1>
         <h2>{restaurant.inspection_type}</h2>
         <h3>{restaurant.action}</h3>
         <p>Violations: {restaurant.violation_description}</p>

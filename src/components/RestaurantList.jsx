@@ -10,7 +10,7 @@ const RestaurantList = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch('https://data.cityofnewyork.us/resource/43nn-pn8j.json');
+      const response = await fetch('https://data.cityofnewyork.us/resource/43nn-pn8j.json?$limit=300');
       const data = await response.json();
       setRestaurants(data);
     };
@@ -30,7 +30,10 @@ const RestaurantList = () => {
   return (
     <div>
       <div className="restaurant-list">
-        {restaurants.map((restaurant) => (
+        {restaurants
+          .filter((restaurant) => restaurant.violation_description && restaurant.violation_description.trim() !== '')
+          .filter((restaurant) => restaurant.dba && restaurant.dba.trim() !== '')
+          .map((restaurant) => (
           <RestaurantCard key={restaurant.camis} restaurant={restaurant} onClick={openModal} />
         ))}
       </div>

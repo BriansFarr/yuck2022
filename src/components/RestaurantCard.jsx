@@ -1,21 +1,19 @@
 // src/components/RestaurantCard.jsx
-
 import React, { useState } from "react";
 import { formatDate } from "../helpers/formatDate";
 import RestaurantModal from "./RestaurantModal";
 import '../CSS/Restaurant.css';
 
-
-
-const RestaurantCard = ({ restaurant, city }) => {
+const RestaurantCard = ({ restaurant }) => {
   const [showModal, setShowModal] = useState(false);
 
   const {
-    name,
+    camis,
+    dba,
     building,
     street,
     boro,
-    city: cityName,
+    city,
     zipcode,
     phone,
     inspection_date,
@@ -35,16 +33,14 @@ const RestaurantCard = ({ restaurant, city }) => {
   return (
     <>
       <div className="restaurant-card" onClick={handleCardClick}>
-        <h2>{name}</h2>
+        <h2>{dba}</h2> 
         <p>
-          {building} {street} {boro}
+          {building} {street}
         </p>
         <p>
-          {cityName}, NY {zipcode}
+          {boro}, NY, {zipcode}
         </p>
-        <p>{phone}</p>
         <p>Inspection Date: {formatDate(inspection_date)}</p>
-        
       </div>
       {showModal && (
         <RestaurantModal
